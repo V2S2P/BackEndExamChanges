@@ -65,6 +65,7 @@ public class CandidateService {
 
     public List<CandidateDTO> getAll() {
         return candidateDAO.getAll().stream()
+                //Anonymous function: takes a Candidate 'c' and returns its corresponding CandidateDTO
                 .map(c -> CandidateMapper.toDTO(c, false))
                 .collect(Collectors.toList());
 

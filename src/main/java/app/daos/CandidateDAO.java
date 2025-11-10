@@ -61,7 +61,7 @@ public class CandidateDAO implements IDAO<Candidate,Integer> {
     public Candidate update(int id, Candidate candidate) {
         try(EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
-            // id is the identifier of th existing entity in the DB that we want to update.
+            // id is the identifier of the existing entity in the DB that we want to update.
             // em.find tells JPA to find an entity of type "Candidate" with the primary key being (id)
             // The returned object (existingCandidate) is managed, so anything you do inside a transaction(session), JPA will automatically detect and update the DB.
             Candidate existingCandidate = em.find(Candidate.class, id);
