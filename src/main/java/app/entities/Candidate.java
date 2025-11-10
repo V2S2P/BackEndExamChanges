@@ -26,8 +26,8 @@ public class Candidate {
     @ManyToMany
     @JoinTable(
             name = "candidate_skill", // explicit join table name
-            joinColumns = @JoinColumn(name = "candidate_id"),
-            inverseJoinColumns = @JoinColumn(name = "skill_id")
+            joinColumns = @JoinColumn(name = "candidate_id"), // column that refers to THIS entity's primary key
+            inverseJoinColumns = @JoinColumn(name = "skill_id") // column that refers to the OTHER entity's primary key
     )
     private List<Skill> skills = new ArrayList<>();
 

@@ -43,7 +43,7 @@ public class HibernateConfig {
         return emfTest;
     }
 
-    // TODO: IMPORTANT: Add Entity classes here for them to be registered with Hibernate
+    // TODO: IMPORTANT: Add Entity classes here for them to be registered with Hibernate to become database table
     private static void getAnnotationConfiguration(Configuration configuration) {
         configuration.addAnnotatedClass(Candidate.class);
         configuration.addAnnotatedClass(Skill.class);
