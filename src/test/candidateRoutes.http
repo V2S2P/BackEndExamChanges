@@ -1,0 +1,59 @@
+### Create candidate (only admin)
+POST http://localhost:7070/api/v1/candidates
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJiZXN0Y29kZS5kayIsInN1YiI6IkFkbWluIiwiZXhwIjoxNzYyNzM0MjQ0LCJyb2xlcyI6IkFkbWluIiwidXNlcm5hbWUiOiJBZG1pbiJ9.gub6Vfd4DfVwYomIuFwGZs_lfc6yN_xLj3CBA48oHHM
+
+{
+  "name": "Boris Backer",
+  "phone": "555-1234",
+  "educationBackground": "BSc Computer Science",
+  "skills": []
+}
+
+### get all candidates
+GET http://localhost:7070/api/v1/candidates
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJiZXN0Y29kZS5kayIsInN1YiI6IkFkbWluIiwiZXhwIjoxNzYyNzM1Nzc0LCJyb2xlcyI6IkFkbWluIiwidXNlcm5hbWUiOiJBZG1pbiJ9.us5cIU-LZPCKJuxKz0sxKywYTuB2hsIdhQoVHqoM-i8
+
+### get candidate by id
+GET http://localhost:7070/api/v1/candidates/4
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJiZXN0Y29kZS5kayIsInN1YiI6IkFkbWluIiwiZXhwIjoxNzYyNzM1Nzc0LCJyb2xlcyI6IkFkbWluIiwidXNlcm5hbWUiOiJBZG1pbiJ9.us5cIU-LZPCKJuxKz0sxKywYTuB2hsIdhQoVHqoM-i8
+
+### update candidate (only admin)
+PUT http://localhost:7070/api/v1/candidates/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJiZXN0Y29kZS5kayIsInN1YiI6IkFkbWluIiwiZXhwIjoxNzYyNzM0MjQ0LCJyb2xlcyI6IkFkbWluIiwidXNlcm5hbWUiOiJBZG1pbiJ9.gub6Vfd4DfVwYomIuFwGZs_lfc6yN_xLj3CBA48oHHM
+
+{
+  "id": 1,
+  "name": "Alice Johnson Updated",
+  "phone": "555-5678",
+  "educationBackground": "MSc Computer Science",
+  "skills": []
+}
+
+### delete candidate (only admin)
+DELETE http://localhost:7070/api/v1/candidates/4
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJiZXN0Y29kZS5kayIsInN1YiI6IkFkbWluIiwiZXhwIjoxNzYyNzM1Nzc0LCJyb2xlcyI6IkFkbWluIiwidXNlcm5hbWUiOiJBZG1pbiJ9.us5cIU-LZPCKJuxKz0sxKywYTuB2hsIdhQoVHqoM-i8
+
+### Link skill to candidate (only admin)
+PUT http://localhost:7070/api/v1/candidates/4/skills/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJiZXN0Y29kZS5kayIsInN1YiI6IkFkbWluIiwiZXhwIjoxNzYyNzM1Nzc0LCJyb2xlcyI6IkFkbWluIiwidXNlcm5hbWUiOiJBZG1pbiJ9.us5cIU-LZPCKJuxKz0sxKywYTuB2hsIdhQoVHqoM-i8
+
+### filter candidates by category
+GET http://localhost:7070/api/v1/candidates/category/PROG_LANG
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJiZXN0Y29kZS5kayIsInN1YiI6IkFkbWluIiwiZXhwIjoxNzYyNzM1Nzc0LCJyb2xlcyI6IkFkbWluIiwidXNlcm5hbWUiOiJBZG1pbiJ9.us5cIU-LZPCKJuxKz0sxKywYTuB2hsIdhQoVHqoM-i8
+
+### get enriched data
+GET http://localhost:7070/api/v1/candidates/1/enriched
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJiZXN0Y29kZS5kayIsInN1YiI6IkFkbWluIiwiZXhwIjoxNzYyNzM1Nzc0LCJyb2xlcyI6IkFkbWluIiwidXNlcm5hbWUiOiJBZG1pbiJ9.us5cIU-LZPCKJuxKz0sxKywYTuB2hsIdhQoVHqoM-i8
+
+### get top candidate by popularity score
+GET http://localhost:7070/api/v1/reports/candidates/top-by-popularity
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJiZXN0Y29kZS5kayIsInN1YiI6IkFkbWluIiwiZXhwIjoxNzYyNzM0MjQ0LCJyb2xlcyI6IkFkbWluIiwidXNlcm5hbWUiOiJBZG1pbiJ9.gub6Vfd4DfVwYomIuFwGZs_lfc6yN_xLj3CBA48oHHM
